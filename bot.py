@@ -42,14 +42,12 @@ async def cmd_start(message: Message):
 async def handle_message(message: Message):
     """Обработчик текстовых сообщений"""
     try:
-        # Показываем статус обработки
-        processing_msg = await message.answer("🔄 Обрабатываю запрос...")
+        # processing_msg = await message.answer("🔄 Обрабатываю запрос...")
 
         # Обработка запроса
         result = await query_processor.process_query(message.text)
 
-        # Удаляем сообщение о обработке
-        await processing_msg.delete()
+        # await processing_msg.delete()
 
         # Отправляем результат
         await message.answer(f"📊 Результат: {result}")
